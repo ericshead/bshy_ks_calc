@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Death Valley Kickstarter - Button Shy Games</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="base.css" />
+	<script src="ks_calc.js"></script>
+</head>
+
+<body>
+<div id="heading">
+<!-- 100% across the screen, purple background -->
+	<p>Join the Button Shy Mailing List &nbsp; <a href="https://dm-mailinglist.com/subscribe?f=0e04db91">Subscribe Here</a></p>
+</div>
+
+<div id="kstitle">
+<!-- two halves; bShy logo and campaign title and tag line -->
+	<img src="img/bshy_logo.png" width="200px" />
+	<h1>Death Valley</h1>
+	<h2>A 1-2 player press-your-luck tableau builder set in the hazardous Death Valley.</h2>
+</div>
+
+<div id="hrline" class="col-50 col-s-100"><br /><hr /></div>
+
+<div id="mainbody">
+<div id="wallet" class="col-50 col-s-100">
+<!-- wallet image, KS link and dates -->
+<!-- desktop: left-half; tablet, mobile: 100% wide -->
+	<img src="img/wallet_dv.png" />
+	<p>Kickstarter link: <a href="https://www.kickstarter.com/projects/239309591/death-valley-0">&ldquo;Death Valley&rdquo;</a><br />
+	 Campaign runs: March 16 &ndash; March 27</p>
+</div> <!-- #wallet -->
+
+<div id="calc" class="col-50 col-s-100">
+<!-- drop-down selections to calc total cost -->
+<!-- desktop: right-half; tablet, mobile: 100% wide -->
+	<h3>Calculate your final pledge amount:</h3>
+
+    <form>
+    <!-- Kickstarter Rewards Levels -->
+     <div class="question">
+     <label for="Reward">Choose your Kickstarter Reward:</label><br />
+     <select id="Reward" name="Reward" onchange="checkPnP()">
+      <option value="0" selected>$0 - No reward</option>
+      <option value="3">$3 - Death Valley PnP</option>
+      <option value="10">$10 - Death Valley + expansion</option>
+      <option value="30">$30 - Intro to Button Shy Bundle</option>
+      <option value="30">$30 - Real Life Locations Bundle</option>
+      <option value="72">$72 - Death Valley for US Retailers</option>
+     </select></div> <!-- .question -->
+    
+     <!-- Kickstarter Shipping Costs -->
+     <div class="question">
+     <label for="Shipping">Choose your Location for Shipping:</label><br />
+     <select id="Shipping" name="Shipping" onchange="calcTotalPledge()">
+      <option value="0" selected>$0 - PnP Reward</option>
+      <option value="5">$5 - United States</option>
+      <option value="10">$10 - Canada</option>
+      <option value="12">$12 - Europe / UK</option>
+      <option value="16">$16 - Rest of the World</option>
+     </select></div> <!-- .question -->
+    
+     <!-- Patreon BGotM Discount Tiers -->
+     <div class="question">
+     <label for="Discount">Choose your Patreon/BGotMC Level:</label><br />
+     <select id="Discount" name="Discount" onchange="calcTotalPledge()">
+      <option value="0" selected>Not a BGotM Member</option>
+      <option value="1">$3 - Digital Only</option>
+      <option value="2">$5 - Postcard and More (US)</option>
+      <option value="2">$6 - Postcard and More (Int'l)</option>
+      <option value="5">$10 - Postcard, More and Extras (US)</option>
+      <option value="5">$12 - Postcard, More and Extras (Int'l)</option>
+      <option value="5">$20 - Postcard, More, Extras &amp; Wallet Game (US)</option>
+      <option value="5">$27.50 - Postcard, More, Extras &amp; Wallet Game (CAN)</option>
+      <option value="5">$30 - Postcard, More, Extras &amp; Wallet Game (Int'l)</option>
+     </select></div> <!-- .question -->
+    
+     <div class="question answer">
+       <p id="showAmount">Total pledge amount = <strong>$0.00</strong></p>
+       <p id="oneDollar"></p>
+       <p id="showDiscount"></p>
+     </div> <!-- .question -->
+    </form>
+	 
+	 <p id="addons"><strong>Add-ons:</strong> are offered separately following the completion of your reward level selection.
+	  <em>Do not</em> add additional funds for add-ons before the Add-On screen; these will be charged separately during this step.</p>
+</div> <!-- #calc -->
+</div> <!-- #mainbody -->
+
+<div id="footer">
+	<p>&copy; 2021 &ndash; Button Shy Games</p>
+</div> <!-- #footer -->
+</body>
+</html>

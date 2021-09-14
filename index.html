@@ -30,8 +30,8 @@
 <!-- wallet image, KS link and dates -->
 <!-- desktop: left-half; tablet, mobile: 100% wide -->
 	<img src="img/unsurmountable_ks.png" />
-	<p>Kickstarter link: <a href="https://www.kickstarter.com/projects/239309591/tussie-mussie-expansion-collection-by-elizabeth-hargrave">&ldquo;Unsurmountable: Simply Solo #3&rdquo;</a><br />
-	 Campaign runs: September 14 &ndash; 29</p>
+	<p>Kickstarter link: <a href="https://www.kickstarter.com/projects/239309591/unsurmountable">&ldquo;Unsurmountable: Simply Solo #3&rdquo;</a><br />
+	 Campaign runs: September 14 &ndash; 25</p>
 </div> <!-- #wallet -->
 
 <div id="calc" class="col-50 col-s-100">
@@ -56,14 +56,17 @@
     
      <!-- Kickstarter Shipping Costs -->
      <div class="question">
-     <label for="Shipping">Choose your Location for Shipping:</label><br />
+     <label for="Shipping">Choose your Shipping Rate:</label><br />
      <select id="Shipping" name="Shipping" onchange="calcTotalPledge()">
       <option value="0" selected>$0 - PnP Reward</option>
       <option value="5">$5 - United States</option>
-      <option value="9">$9 - USA (MEGA-Fan tier shipping)</option>
-      <option value="10">$10 - Canada</option>
-      <option value="12">$12 - Europe (not incl. UK)</option>
-      <option value="16">$16 - UK / Rest of the World</option>
+      <option id="caneuless" value="14">$14 - Canada, European Union (not incl. UK)</option>
+      <option id="ukless" value="15">$15 - United Kingdom</option>
+	  <option id="worldless" value="17">$17 - Rest of the World</option>
+      <option id="caneumore" value="24">$24 - Canada, EU (3+ games and 3+ exps)</option>
+      <option id="ukmore" value="26">$26 - United Kingdom (3+ games and 3+ exps)</option>
+	  <option id="worldmore" value="27">$27 - Rest of the World (3+ games and 3+ exps)</option>
+	  
      </select></div> <!-- .question -->
     
      <!-- Patreon BGotM Discount Tiers -->

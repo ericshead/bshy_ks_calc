@@ -14,7 +14,7 @@ function calcTotalPledge() {
 	var totalAmount = rewardValue + shippingCost - bgotmDiscount;
 	var ksAmount = totalAmount -1;
 	
-	if (rewardValue <= 30) { 
+	if (rewardValue <= 35) { 
 		document.getElementById("caneuless").style.display = "inline" 
 		document.getElementById("ukless").style.display = "inline" 
 		document.getElementById("worldless").style.display = "inline" 
@@ -33,31 +33,35 @@ function calcTotalPledge() {
 	
 	if (bgotmDiscount != "0") { bgotm = true; }
 	if (rewardValue > 3 && shippingCost == 0) { shippingIncl = false; }  /* PnP shipping tier check */
-	if (rewardValue >= 50 && shippingCost < 24) { shippingIncl = false; }  /* large order shipping tier check */
+	if (rewardValue > 35 && shippingCost < 24) { shippingIncl = false; }  /* large order shipping tier check */
+	if (rewardValue <= 35 && shippingCost >= 24) { shippingIncl = false; }  /* small order shipping tier check */
+	if (shippingCost == 5) { shippingIncl = true; }  /* shipping to US is always $5 */
+	
 	
 	/* displaying the result on the page */
-	if (shippingIncl) {
-		document.getElementById("showAmount").innerHTML = "Total pledge amount = <strong>$"+ totalAmount +".00</strong>";
+	if (shippingIncl) {		
+		document.getElementById("showAmount").innerHTML = "Reward ($"+ rewardValue +") + Shipping ($"+ shippingCost +") - Discount ($"+ bgotmDiscount +") = <br />Total pledge amount = <strong>$"+ totalAmount +".00</strong>";
 	
 		if (bgotm) {
+			document.getElementById("oneDollar").style.marginTop = "0.6em";
 			document.getElementById("oneDollar").innerHTML = "$1 Reward Tier \+  &ldquo;Bonus Support&rdquo; = <strong>$"+ ksAmount +".00</strong>";
-			// document.getElementById("showDiscount").style.marginTop = "0.6em";
-			document.getElementById("showDiscount").innerHTML = "Total discount = <strong>$"+ bgotmDiscount +".00</strong>";
+			// document.getElementById("showDiscount").innerHTML = "Total discount = <strong>$"+ bgotmDiscount +".00</strong>";
 		} else {
+			document.getElementById("oneDollar").style.marginTop = "0";
 			document.getElementById("oneDollar").innerHTML = "";
-			// document.getElementById("showDiscount").style.marginTop = "0";
 			document.getElementById("showDiscount").innerHTML = "";
 		}
 	}
 	else {
-		document.getElementById("showAmount").innerHTML = "Please select a shipping destination.";
+		document.getElementById("showAmount").innerHTML = "Please select your shipping rate...";
 		document.getElementById("Shipping").value = 0;
+		document.getElementById("oneDollar").style.marginTop = "0";
 		document.getElementById("oneDollar").innerHTML = "";
 		document.getElementById("showDiscount").innerHTML = "";
 	}
 }
 
-function checkPnP() {
+function checkPnP () {
 	var elem = document.getElementById("Reward");
 	if (parseInt(elem.options[elem.selectedIndex].value) == 3) {
 		document.getElementById("Shipping").value = 0;

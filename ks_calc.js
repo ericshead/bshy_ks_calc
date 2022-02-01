@@ -15,19 +15,21 @@ function calcTotalPledge() {
 	var ksAmount = totalAmount -1;
 	
 	if (rewardValue <= 35) { 
-		document.getElementById("caneuless").style.display = "inline" 
+		document.getElementById("canless").style.display = "inline" 
+		document.getElementById("euless").style.display = "inline" 
 		document.getElementById("ukless").style.display = "inline" 
 		document.getElementById("worldless").style.display = "inline" 
-		document.getElementById("caneumore").style.display = "none"
-		document.getElementById("ukmore").style.display = "none"
+		document.getElementById("canmore").style.display = "none"
+		document.getElementById("eumore").style.display = "none"
 		document.getElementById("worldmore").style.display = "none"
 	}
 	else { 
-		document.getElementById("caneuless").style.display = "none" 
-		document.getElementById("ukless").style.display = "none" 
+		document.getElementById("canless").style.display = "none" 
+		document.getElementById("euless").style.display = "none" 
+		document.getElementById("ukless").style.display = "inline" 
 		document.getElementById("worldless").style.display = "none" 
-		document.getElementById("caneumore").style.display = "inline"
-		document.getElementById("ukmore").style.display = "inline"
+		document.getElementById("canmore").style.display = "inline"
+		document.getElementById("eumore").style.display = "inline"
 		document.getElementById("worldmore").style.display = "inline"
 	}
 	

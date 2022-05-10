@@ -48,6 +48,8 @@ button { margin-bottom: 1em; padding: 0.25em 0.5em; border-radius: 0.2em; backgr
 #heading a { padding: 0.3em 0.75em; background-color: #dabb62; color: #4c486d; font-size: 90%; text-decoration: none; border-radius: 0.25em; }
 
 #kstitle img { float: left; margin: 0 10%; }
+#kstitle h2 { margin-bottom: 0.2em; }
+#kstitle a { font-size: 100%; text-decoration: underline; }
 
 #wallet img { width: 80%; border-radius: 1em; }
 #wallet p { margin: 0.5em 0; }
